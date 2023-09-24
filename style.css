@@ -1,0 +1,390 @@
+@font-face {
+    font-family: "custom";
+    src: url("./Cybersky.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }   
+}
+
+@keyframes rotateCounter {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+    
+}
+
+@keyframes growFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(3); 
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+body {
+    background-image: url(./background.jpg);
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+main h1 {
+    color: #fff;
+    margin-bottom: 0;
+    margin-right: 10px;
+    padding-bottom: 0;
+    font-family: "custom";
+    text-align: center;
+    font-size: 40px;
+    background-color: hsla(0, 0%, 0%, .75);
+}
+
+.cursor {
+    animation: blink 1s step-end infinite forwards;
+    height: 25px;
+    margin-bottom: 0;
+}
+.heading {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
+}
+
+
+.circle-container {
+    max-width: 500px;
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-top: 75px;
+    border-radius: 100%;
+    background-image: url('./circleBackground.png');
+    box-shadow: 0 0 100px hsla(204, 100%, 30%, .75);
+}
+.circle {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: rotate 75s linear infinite forwards;
+    z-index: 10;
+}
+.ball {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: absolute; 
+    z-index: 20;
+    cursor: pointer;
+}
+
+.ring {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 19;
+    border-radius: 100%;
+}
+
+#redCircle1 {
+    width: 350px;
+    height: 350px;
+    margin: 75px;
+    animation: rotateCounter 95s linear infinite forwards;
+    filter: drop-shadow(0 0 20px #ff4a4a);
+}
+#redCircle1Dark {
+    width: 350px;
+    height: 350px;
+    margin: 75px;
+    animation: rotate 95s linear 3s infinite forwards;
+    opacity: 40%;
+}
+
+#yellowCircle1 {
+    margin: 125px;
+    width: 250px;
+    height: 250px;
+    animation: rotate 85s linear infinite forwards;
+    filter: drop-shadow(0 0 20px #ffdc41);
+}
+#yellowCircle1Dark {
+    margin: 125px;
+    width: 250px;
+    height: 250px;
+    animation: rotateCounter 105s linear 2s infinite forwards;
+    opacity: 40%;
+}
+
+#blueCircle1 {
+    margin: 25px;
+    width: 450px;
+    height: 450px;
+    animation: rotate 200s linear infinite forwards;
+    filter: drop-shadow(0 0 20px #2ffbf8);
+}
+
+#blueCircle1Dark {
+    margin: 25px;
+    width: 450px;
+    height: 450px;
+    animation: rotateCounter 170s linear 3s infinite forwards;
+    opacity: 40%;
+}
+
+#redBall {
+    top: 50%;
+    left: 2.5%;
+    box-shadow: 0 0 15px#ff4a4a;
+}
+
+#yellowBall {
+    box-shadow: 0 0 15px #ffdc41;
+    top: 30%;
+    left: 77%;
+}
+
+#blueBall {
+    box-shadow: 0 0 15px #2ffbf8;
+    top: 71%;
+    left: 50%;
+}
+
+
+
+#redRing {
+    top: 50%;
+    left: 2.5%;
+    box-shadow: 0 0 15px#ff4a4a;
+    animation: growFade 6s ease-out 0s infinite forwards;
+}
+
+#yellowRing {
+    box-shadow: 0 0 15px #ffdc41;
+    top: 30%;
+    left: 77%;
+    animation: growFade 6s ease-out 2s infinite forwards;
+}
+
+#blueRing {
+    box-shadow: 0 0 15px #2ffbf8;
+    top: 71%;
+    left: 50%;
+    animation: growFade 6s ease-out 4s infinite forwards;
+}
+
+.logo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 40%;
+    left: 40%;
+    z-index: 20;
+    filter: drop-shadow(0 0 5px #2ffbf8);
+}
+
+.flag {
+    width: 200px;
+    height: auto;
+    opacity: 80%;
+    z-index: 21;
+    position: absolute;
+    display: none;
+}
+
+.flagContainer {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: none;
+    width: 140px;
+    height: 80px;
+}
+
+.flagContainer h3 {
+    color: black;
+    font-family: "custom";
+    font-size: 23px;
+    z-index: 25;
+    opacity: 100%;
+    width: 100%;
+    text-align: center;
+    width: 150px;
+    margin: 0;
+}
+
+#redFlagContainer {
+    top: 22%;
+    left: -35%;
+}
+#redFlag {
+    top: 22%;
+    left: -35%;
+    filter: drop-shadow(0 0 10px #ff4a4a);
+}
+
+#yellowFlagContainer {
+    left: 91%;
+    top: 2%;
+}
+
+#yellowFlag {
+    left: 80%;
+    top: 2%;
+    filter: drop-shadow(0 0 10px #ffdc41);
+}
+
+#blueFlagContainer {
+    top: 88%;
+    left: 65%;
+}
+
+#blueFlag {
+    top: 75%;
+    left: 54%;
+    filter: drop-shadow(0 0 10px #2ffbf8);
+}
+
+#redConnect {
+    width: 200px;
+    height: 342px;
+    position: absolute;
+    top: 54%;
+    left: 9%;
+    transform: rotate(-5deg);
+    z-index: 25;
+    filter: drop-shadow(0 0 20px #ff4a4a);
+    display: none;
+}
+
+#yellowConnect {
+    position: absolute;
+    width: 200px;
+    height: 427px;
+    top: 35%;
+    left: 40%;
+    z-index: 19;
+    display: none;
+}
+
+#blueConnect {
+    position: absolute;
+    width: 200px;
+    height: 230px;
+    top: 75%;
+    left: 33%;
+    z-index: 19;
+    display: none;
+}
+
+.page {
+    width: 100%;
+    margin-top: 100px;
+    height: auto;
+    background-color: hsla(204, 100%, 14%, .75);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: #fff
+}
+
+.page h2 {
+    text-align: center;
+    font-family: 'custom';
+    font-size: 45px;
+    margin-right: 15px; 
+}
+.page p {
+    width: 40%;
+    height: 100%;
+    margin-right: 10%;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+}
+
+#redPage {
+    display: none;
+    border: 2px solid hsla(0, 100%, 65%, .75);
+    box-shadow: 0 0 10px #ff4a4a;
+}
+
+#profile {
+    width: 250px;
+    height: auto;
+    border-radius: 100%;
+    align-self: center;
+}
+.headingColon {
+    font-family: Arial;
+    margin-left: 3px;
+}
+
+.intro {
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+
+
+#yellowPage {
+    border: 2px solid #ffdc41;
+    box-shadow: 0 0 10px #ffdc41;
+    height: 700px;
+    display: none;
+}
+
+#bluePage {
+    border: 2px solid #2ffbf8;
+    box-shadow: 0 0 10px #2ffbf8;
+    height: 700px;
+    display: none;
+}
